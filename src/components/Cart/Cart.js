@@ -44,6 +44,10 @@ function Cart(props) {
   //       quantity: 1,
   //     },
   //   ];
+
+  const removehandler = (id) => {
+    cartCtx.removeItem(id);
+  };
   return (
     <div className="cart">
       <Card border="light" style={{ width: "28rem" }}>
@@ -81,7 +85,11 @@ function Cart(props) {
                     <span>x{item.quantity}</span>
                   </Col>
                   <Col className="col-2">
-                    <Button variant="danger" className="btn-sm">
+                    <Button
+                      variant="danger"
+                      className="btn-sm"
+                      onClick={removehandler.bind(null, item.id)}
+                    >
                       Remove
                     </Button>
                   </Col>
