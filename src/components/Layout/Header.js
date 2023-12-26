@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import cartContext from "../../strore/cart-context";
 
@@ -14,9 +15,22 @@ const Header = ({ onShow }) => {
     <div>
       <header className={classes.header}>
         <div className={classes.list}>
-          <h4>HOME</h4>
-          <h4>STORE</h4>
-          <h4>ABOUT</h4>
+          <h4>
+            <NavLink to="/home" activeclassName={classes.active}>
+              HOME
+            </NavLink>
+          </h4>
+
+          <h4>
+            <NavLink to="/" activeclassName={classes.active}>
+              STORE
+            </NavLink>
+          </h4>
+          <h4>
+            <NavLink to="/about" activeclassName={classes.active}>
+              ABOUT
+            </NavLink>
+          </h4>
         </div>
         <div className={classes.button}>
           <Button variant="outline-info" bg="dark" onClick={onShow}>

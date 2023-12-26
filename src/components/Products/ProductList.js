@@ -2,7 +2,7 @@ import React from "react";
 import Product from "./Product";
 import "./ProductList.css";
 
-const Productlist = () => {
+export default function ProductList() {
   const productsArr = [
     {
       id: "p1",
@@ -46,6 +46,4 @@ const Productlist = () => {
       </div>
     </div>
   );
-};
-
-export default Productlist;
+}
